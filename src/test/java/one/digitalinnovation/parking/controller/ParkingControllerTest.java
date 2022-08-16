@@ -12,7 +12,7 @@ import org.springframework.http.MediaType;
 
 // Disponibiliza uma porta aleatória para testes
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class ParkingControllerTest {
+class ParkingControllerTest extends AbstractContainerBase {
 
     @LocalServerPort
     private int randomPort;
@@ -52,7 +52,7 @@ class ParkingControllerTest {
                 .then()
                 .statusCode(HttpStatus.CREATED.value())
                 .body("license", Matchers.equalTo("SSP-3333"))
-                .body("color", Matchers.equalTo("PRETO"));
+                .body("color", Matchers.equalTo("AMARELO"));
 
     }
 }
